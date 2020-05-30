@@ -2,13 +2,13 @@
 
 Deterministic/nonce-reuse resistant authenticated encryption scheme using XChaCha20, implemented on libsodium.
 
-|                    | XChaCha20-Poly1305  | XChaCha20-SIV               |
-| ------------------ | ------------------- | --------------------------- |
-| Key size           | 256 bits            | 256 bits (before expansion) |
-| Authentication tag | 128 bits            | 256 bits                    |
-| Nonce size         | 192 bits, mandatory | 128 bits, optional          |
-| Nonce reuse        | Can leak plaintext  | Leaks message duplication   |
-| Speed              | Fast                | Slightly slower             |
+|                    | XChaCha20-Poly1305  | XChaCha20-SIV                  |
+| ------------------ | ------------------- | ------------------------------ |
+| Key size           | 256 bits            | 256 bits (before expansion)    |
+| Authentication tag | 128 bits            | 256 bits                       |
+| Nonce              | 192 bits, mandatory | 128 bits, **optional**         |
+| Nonce reuse        | Can leak plaintext  | Only leaks message duplication |
+| Speed              | Fast                | Slightly slower                |
 
 ## Usage
 
