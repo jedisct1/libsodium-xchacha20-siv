@@ -1,4 +1,4 @@
-#include "../xchacha20-blake2b/crypto_aead_det_xchacha20.h"
+#include "../xchacha20/crypto_aead_det_xchacha20.h"
 #include <sodium.h>
 #include <stdio.h>
 #include <string.h>
