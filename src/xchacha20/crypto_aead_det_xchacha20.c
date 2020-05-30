@@ -86,9 +86,9 @@ crypto_aead_det_xchacha20_encrypt_detached(
 
 int
 crypto_aead_det_xchacha20_decrypt_detached(
-    unsigned char *m, const unsigned char *c, unsigned long long clen,
+    unsigned char *m, const unsigned char *c, size_t clen,
     const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *ad,
-    unsigned long long adlen, const unsigned char *nonce,
+    size_t adlen, const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES])
 {
     unsigned char subkeys[64], *ka = &subkeys[0], *ke = &subkeys[32];
@@ -114,10 +114,9 @@ crypto_aead_det_xchacha20_encrypt(unsigned char *c, const unsigned char *m, size
 }
 
 int
-crypto_aead_det_xchacha20_decrypt(unsigned char *m, const unsigned char *c, unsigned long long clen,
-                                  const unsigned char *ad, unsigned long long adlen,
-                                  const unsigned char *nonce,
-                                  const unsigned char  k[crypto_aead_det_xchacha20_KEYBYTES])
+crypto_aead_det_xchacha20_decrypt(unsigned char *m, const unsigned char *c, size_t clen,
+                                  const unsigned char *ad, size_t adlen, const unsigned char *nonce,
+                                  const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES])
 {
     size_t mlen;
 

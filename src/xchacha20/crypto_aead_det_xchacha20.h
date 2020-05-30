@@ -17,9 +17,9 @@ int crypto_aead_det_xchacha20_encrypt_detached(
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 
 int crypto_aead_det_xchacha20_decrypt_detached(
-    unsigned char *m, const unsigned char *c, unsigned long long clen,
+    unsigned char *m, const unsigned char *c, size_t clen,
     const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *ad,
-    unsigned long long adlen, const unsigned char *nonce,
+    size_t adlen, const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 
 int crypto_aead_det_xchacha20_encrypt(unsigned char *c, const unsigned char *m, size_t mlen,
@@ -27,10 +27,10 @@ int crypto_aead_det_xchacha20_encrypt(unsigned char *c, const unsigned char *m, 
                                       const unsigned char *nonce,
                                       const unsigned char  k[crypto_aead_det_xchacha20_KEYBYTES]);
 
-int crypto_aead_det_xchacha20_decrypt(unsigned char *m, const unsigned char *c,
-                                      unsigned long long clen, const unsigned char *ad,
-                                      unsigned long long adlen, const unsigned char *nonce,
-                                      const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
+int crypto_aead_det_xchacha20_decrypt(unsigned char *m, const unsigned char *c, size_t clen,
+                                      const unsigned char *ad, size_t adlen,
+                                      const unsigned char *nonce,
+                                      const unsigned char  k[crypto_aead_det_xchacha20_KEYBYTES]);
 
 void crypto_aead_det_xchacha20_keygen(unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 

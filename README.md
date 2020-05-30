@@ -14,8 +14,11 @@ Deterministic/nonce-reuse resistant authenticated encryption scheme using XChaCh
 
 ```c
 int crypto_aead_det_xchacha20_encrypt_detached(
-    unsigned char *c, unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *m,
-    size_t mlen, const unsigned char *ad, size_t adlen, const unsigned char *nonce,
+    unsigned char *c,
+    unsigned char mac[crypto_aead_det_xchacha20_MACBYTES],
+    const unsigned char *m, size_t mlen,
+    const unsigned char *ad, size_t adlen,
+    const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 ```
 
@@ -23,9 +26,11 @@ Encrypt a message `m` of length `mlen` bytes using a key `k`, an optional nonce 
 
 ```c
 int crypto_aead_det_xchacha20_decrypt_detached(
-    unsigned char *m, const unsigned char *c, unsigned long long clen,
-    const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *ad,
-    unsigned long long adlen, const unsigned char *nonce,
+    unsigned char *m,
+    const unsigned char *c, size_t clen,
+    const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES],
+    const unsigned char *ad, size_t adlen,
+    const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 ```
 
@@ -34,7 +39,8 @@ Decrypt a ciphertext `c` or length `clen` bytes using a key `k`, an optional non
 The function returns `-1` if the authentication tag didn't verify, and `0` on success, storing the decrypted message into `m`.
 
 ```c
-int crypto_aead_det_xchacha20_encrypt(unsigned char *c, const unsigned char *m, size_t mlen,
+int crypto_aead_det_xchacha20_encrypt(unsigned char *c,
+                                      const unsigned char *m, size_t mlen,
                                       const unsigned char *ad, size_t adlen,
                                       const unsigned char *nonce,
                                       const unsigned char  k[crypto_aead_det_xchacha20_KEYBYTES]);
@@ -45,9 +51,10 @@ Similar to `encrypt_detached`, but the ciphertext and MAC are concatenated.
 `c` must be `mlen + crypto_aead_det_xchacha20_MACBYTES` long.
 
 ```c
-int crypto_aead_det_xchacha20_decrypt(unsigned char *m, const unsigned char *c,
-                                      unsigned long long clen, const unsigned char *ad,
-                                      unsigned long long adlen, const unsigned char *nonce,
+int crypto_aead_det_xchacha20_decrypt(unsigned char *m,
+                                      const unsigned char *c, size_t clen,
+                                      const unsigned char *ad, size_t adlen,
+                                      const unsigned char *nonce,
                                       const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 ```
 
