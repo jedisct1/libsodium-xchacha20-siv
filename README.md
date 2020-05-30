@@ -8,7 +8,7 @@ Deterministic/nonce-reuse resistant authenticated encryption scheme using XChaCh
 | Authentication tag | 128 bits            | 256 bits                    |
 | Nonce size         | 192 bits, mandatory | 128 bits, optional          |
 | Nonce reuse        | Can leak plaintext  | Leaks message duplication   |
-| Speed              | Fast                | Not as fast                 |
+| Speed              | Fast                | Slightly slower             |
 
 ## Usage
 
