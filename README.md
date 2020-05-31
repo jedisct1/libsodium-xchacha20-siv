@@ -15,7 +15,7 @@ Deterministic/nonce-reuse resistant authenticated encryption scheme using XChaCh
 ```c
 int crypto_aead_det_xchacha20_encrypt_detached(
     unsigned char *c,
-    unsigned char mac[crypto_aead_det_xchacha20_MACBYTES],
+    unsigned char mac[crypto_aead_det_xchacha20_ABYTES],
     const unsigned char *m, size_t mlen,
     const unsigned char *ad, size_t adlen,
     const unsigned char *nonce,
@@ -28,7 +28,7 @@ Encrypt a message `m` of length `mlen` bytes using a key `k`, an optional nonce 
 int crypto_aead_det_xchacha20_decrypt_detached(
     unsigned char *m,
     const unsigned char *c, size_t clen,
-    const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES],
+    const unsigned char mac[crypto_aead_det_xchacha20_ABYTES],
     const unsigned char *ad, size_t adlen,
     const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
@@ -48,7 +48,7 @@ int crypto_aead_det_xchacha20_encrypt(unsigned char *c,
 
 Similar to `encrypt_detached`, but the ciphertext and MAC are concatenated.
 
-`c` must be `mlen + crypto_aead_det_xchacha20_MACBYTES` long.
+`c` must be `mlen + crypto_aead_det_xchacha20_ABYTES` long.
 
 ```c
 int crypto_aead_det_xchacha20_decrypt(unsigned char *m,

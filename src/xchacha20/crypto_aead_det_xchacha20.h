@@ -8,17 +8,17 @@ extern "C" {
 #include <stdlib.h>
 
 #define crypto_aead_det_xchacha20_KEYBYTES 32
-#define crypto_aead_det_xchacha20_MACBYTES 32
+#define crypto_aead_det_xchacha20_ABYTES 32
 #define crypto_aead_det_xchacha20_NONCEBYTES 16
 
 int crypto_aead_det_xchacha20_encrypt_detached(
-    unsigned char *c, unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *m,
+    unsigned char *c, unsigned char mac[crypto_aead_det_xchacha20_ABYTES], const unsigned char *m,
     size_t mlen, const unsigned char *ad, size_t adlen, const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 
 int crypto_aead_det_xchacha20_decrypt_detached(
     unsigned char *m, const unsigned char *c, size_t clen,
-    const unsigned char mac[crypto_aead_det_xchacha20_MACBYTES], const unsigned char *ad,
+    const unsigned char mac[crypto_aead_det_xchacha20_ABYTES], const unsigned char *ad,
     size_t adlen, const unsigned char *nonce,
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 

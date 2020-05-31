@@ -17,7 +17,7 @@ main(void)
 
     crypto_aead_det_xchacha20_keygen(k);
     mlen = randombytes_uniform(1000);
-    clen = mlen + crypto_aead_det_xchacha20_MACBYTES;
+    clen = mlen + crypto_aead_det_xchacha20_ABYTES;
     m    = sodium_malloc(mlen);
     m2   = sodium_malloc(mlen);
     c    = sodium_malloc(clen);
