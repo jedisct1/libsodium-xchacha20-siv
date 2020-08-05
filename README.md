@@ -34,7 +34,7 @@ int crypto_aead_det_xchacha20_decrypt_detached(
     const unsigned char k[crypto_aead_det_xchacha20_KEYBYTES]);
 ```
 
-Decrypt a ciphertext `c` or length `clen` bytes using a key `k`, an optional nonoce `nonce` (which can be left to `NULL`), optionally verifying additional data `ad` (if not `NULL`) of length `adlen` bytes in addition to the message itself, using the MAC `mac`.
+Decrypt a ciphertext `c` or length `clen` bytes using a key `k`, an optional nonce `nonce` (which can be left to `NULL`), optionally verifying additional data `ad` (if not `NULL`) of length `adlen` bytes in addition to the message itself, using the MAC `mac`.
 
 The function returns `-1` if the authentication tag didn't verify, and `0` on success, storing the decrypted message into `m`.
 
